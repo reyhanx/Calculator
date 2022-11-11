@@ -8,12 +8,22 @@
     <title>Calculator</title>
 </head>
 <body>
+    <div class="box">
+        <div class="square" style="--i:0"></div>
+        <div class="square" style="--i:1"></div>
+        <div class="square" style="--i:2"></div>
+        <div class="square" style="--i:3"></div>
+        <div class="square" style="--i:4"></div>
+        <div class="square" style="--i:5"></div>
+
+        
+    </div>
     <div class="container">
         <form class="calculator" name="calc">
             <input type="text" readonly class="value" name="txt"/>
             <span class="num clear" onclick="calc.txt.value = ''">c</span>
             <span class="num" onclick="document.calc.txt.value += '/'">/</span>
-            <span class="num" onclick="document.calc.txt.value += '*'">*</span>
+            <span class="num" onclick="document.calc.txt.value += '*'">x</span>
             <span class="num" onclick="document.calc.txt.value += '7'">7</span>
             <span class="num" onclick="document.calc.txt.value += '8'">8</span>
             <span class="num" onclick="document.calc.txt.value += '9'">9</span>

@@ -11,10 +11,116 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #091921;
+    background: linear-gradient(-45deg, #ee7752, #ff0062,  #00bbff, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: gradient 10s ease infinite;
+    animation: gradient 10s ease infinite;
+}
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0% 5%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-body::before {
+@keyframes gradient {
+    0% {
+        background-position: 0% 5%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+body .box {
+    position: relative;
+}
+
+body .box .square {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    -webkit-animation: square 10s linear infinite;
+    animation: square 10s linear infinite;
+    -webkit-animation-delay: calc(-1s * var(--i));
+    animation-delay: calc(-1s * var(--i));
+    
+}
+
+@-webkit-keyframes square {
+    0%, 100% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes square {
+    0%, 100% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+body .box .square:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    top: -15px;
+    right: -345px;
+}
+
+body .box .square:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 105px;
+    left: -115px;
+    z-index: 2;
+}
+
+body .box .square:nth-child(3) {
+    width: 60px;
+    height: 60px;
+    bottom: 85px;
+    left: 355px;
+    z-index: -2;
+}
+body .box .square:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    bottom: 35px;
+    left: -95px;
+}
+body .box .square:nth-child(5) {
+    width: 50px;
+    height: 50px;
+    top: -15px;
+    left: -25px;
+}
+body .box .square:nth-child(6) {
+    width: 80px;
+    height: 80px;
+    top: -265px;
+    right: -360px;
+}
+
+
+/* body::before {
     content: '';
     position: absolute;
     top: 0;
@@ -34,7 +140,8 @@ body::after {
     height: 100%;
     background: linear-gradient(#ffffff, #da00ff);
     clip-path: circle(20% at 70% 90%);
-}
+} */
+
 .container {
     position: relative;
     background: rgba(255, 255, 255, 0.05);
